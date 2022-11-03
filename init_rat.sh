@@ -34,7 +34,15 @@ mkdir -p $RATDIR/backend/data/processed/tmin
 mkdir -p $RATDIR/backend/data/processed/uwnd
 mkdir -p $RATDIR/backend/data/processed/vwnd
 mkdir -p $RATDIR/backend/data/nc
+mkdir -p $RATDIR/backend/data/metsim_workspace
+mkdir -p $RATDIR/backend/data/metsim_results
+mkdir -p $RATDIR/backend/data/metsim_inputs
+mkdir -p $RATDIR/backend/data/vic_workspace
+mkdir -p $RATDIR/backend/data/forcings
+mkdir -p $RATDIR/backend/data/vic_results
+mkdir -p $RATDIR/backend/data/vic_logs
 mkdir -p $RATDIR/backend/models
+mkdir -p $RATDIR/backend/logs
 
 
 # initialize conda and install models
@@ -45,3 +53,15 @@ conda create -n metsim -c conda-forge metsim -y
 
 # install vic
 conda create -p $RATDIR/backend/models/vic_env -c conda-forge vic -y
+
+# create rat conda env
+conda create -p $RATDIR/.condaenv -y
+conda activate $RATDIR/.condaenv
+conda install mamba -c conda-forge -y
+mamba env update -p $RATDIR/.condaenv --file env.yml
+
+
+
+# TODOs
+# - download vic parameter file
+# - vic_param initialization from backend/params/vic/vic_params.txt is erroneous due to hard coded paths
