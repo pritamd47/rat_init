@@ -41,6 +41,10 @@ mkdir -p $RATDIR/backend/data/vic_workspace
 mkdir -p $RATDIR/backend/data/forcings
 mkdir -p $RATDIR/backend/data/vic_results
 mkdir -p $RATDIR/backend/data/vic_logs
+mkdir -p $RATDIR/backend/data/rout_input
+mkdir -p $RATDIR/backend/data/rout_results
+mkdir -p $RATDIR/backend/data/route_workspace
+mkdir -p $RATDIR/backend/data/inflow
 mkdir -p $RATDIR/backend/models
 mkdir -p $RATDIR/backend/logs
 
@@ -65,3 +69,4 @@ mamba env update -p $RATDIR/.condaenv --file env.yml
 # TODOs
 # - download vic parameter file
 # - vic_param initialization from backend/params/vic/vic_params.txt is erroneous due to hard coded paths
+# - how to initilaize the station file
