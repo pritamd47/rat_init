@@ -62,7 +62,7 @@ conda create -p $RATDIR/backend/models/vic_env -c conda-forge vic -y
 conda create -p $RATDIR/.condaenv -y
 conda activate $RATDIR/.condaenv
 conda install mamba -c conda-forge -y
-mamba env update -p $RATDIR/.condaenv --file env.yml
+mamba env update -p $RATDIR/.condaenv --file $RATDIR/env.yml
 
 
 
